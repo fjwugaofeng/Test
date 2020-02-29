@@ -1,0 +1,7 @@
+*** Settings ***
+Library           RequestsLibrary
+
+*** Test Cases ***
+case1
+    create session    api    http://127.0.0.1:8080
+    ${addr}    get request    api    jenkins/login

@@ -1,0 +1,20 @@
+*** Keywords ***
+MyKeyWord
+    [Arguments]    ${arg1}    ${arg2}=ok    @{arg3}
+    log    ${arg1}
+    log    ${arg2}
+    log    @{arg3}ok
+
+MyKeyWord-1
+    [Arguments]    ${arg1}    ${arg2}=ok    @{arg3}
+    log    ${arg1}
+    log    ${arg2}
+    log    @{arg3}ok
+    [Return]    ${arg1}
+
+MyKeyWord-2
+    [Arguments]    ${arg1}    ${arg2}=ok    @{arg3}
+    log    ${arg1}
+    log    ${arg2}
+    log    @{arg3}ok
+    [Return]    ${arg1}    ${arg2}

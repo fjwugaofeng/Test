@@ -1,0 +1,19 @@
+*** Settings ***
+Library           SSHLibrary
+
+*** Test Cases ***
+case1
+    ${host}    set Variable    192.168.1.102
+    Open Connection    ${host}
+    @{userinfo}    Create List    root    123456
+    #Login    ${userinfo[0]}    ${userinfo[1]}
+    ${loginmes}    Login    ${userinfo[0]}    ${userinfo[1]}
+    log    ${loginmes}
+    Close All Connections
+
+case2
+    @{list}    create list    1    2    3    4
+    :FOR    ${i}    in    @{list}
+    \    run keyword if    '${i}'=='2'    continue for loop
+    \    log    ${i}
+    log many    @{list}
